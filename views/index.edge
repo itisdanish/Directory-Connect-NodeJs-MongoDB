@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone Directory</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+      /* Custom styles */
+      /* body {
+          background-color: #f8f9fa;
+      } */
+      /* Custom body background with image */
+      body {
+          background-image: url('https://cdn.pixabay.com/photo/2016/11/29/04/17/bonfire-1867275_1280.jpg');
+          background-size: cover; /* Adjust the size of the image as needed */
+          background-repeat: no-repeat;
+      }
+
+
+      header {
+          background-color: #343a40;
+          color: #fff;
+          padding: 20px 0;
+      }
+
+      .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Adjust the opacity here (0.9 for 90% opacity) */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+      .btn-primary {
+          background-color: #007bff;
+          border-color: #007bff;
+      }
+
+      .btn-primary:hover {
+          background-color: #0056b3;
+          border-color: #0056b3;
+      }
+
+      .table {
+          /* background-color: #fff; */
+      }
+
+      /* Custom input styles */
+      .form-group {
+          margin-bottom: 20px;
+      }
+
+      .form-group label {
+          font-weight: bold;
+      }
+
+      .form-control {
+          border: 2px solid #007bff;
+          border-radius: 5px;
+          padding: 10px;
+          font-size: 16px;
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.5); !important
+      }
+
+      .form-control:focus {
+          outline: none;
+          border-color: #0056b3;
+      }
+  </style>
+</head>
+<body>
+    <header class="text-center">
+        <h1>📞 Directory Connect 📇</h1>
+    </header>
+
+    <section class="container">
+        <form action="/post/store" method="POST">
+            <h3>🔗 Connect with Us</h3>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <button class="btn btn-warning btn-block btn-lg" type="submit">📥 Submit</button>
+        </form>
+
+        <table class="table mt-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody id="users">
+                @each(contact in contacts)
+                <tr>
+                    <th scope="row">{{contact.serialNumber}}</th>
+                    <td class="nameData">{{contact.name}}</td>
+                    <td class="emailData">{{contact.email}}</td>
+                </tr>
+                @endeach
+            </tbody>
+        </table>
+    </section>
+
+    <script src="js/form.js"></script>
+</body>
+</html>
