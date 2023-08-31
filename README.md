@@ -2,6 +2,9 @@
 
 Directory Connect is a web application that allows you to add and display contacts. It provides a user-friendly interface for managing your contact list.
 
+![image](https://github.com/itisdanish/Directory-Connect-NodeJs-MongoDB/assets/65316644/ef4a0d05-ded7-4a28-a1ef-c2e75d24cfda)
+
+
 ## Features
 
 - Add contacts with a name and email address.
